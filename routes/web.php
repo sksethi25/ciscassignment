@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+Route::post('/router/all', 'RouterController@showAll');
+Route::get('/showshape', 'RouterController@showshape');
+Route::resource('router', 'RouterController');
 
 Route::get('/', 'RouterController@index');
-Route::resource('router', 'RouterController');
+

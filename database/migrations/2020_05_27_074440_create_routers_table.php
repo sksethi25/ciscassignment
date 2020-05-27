@@ -15,6 +15,11 @@ class CreateRoutersTable extends Migration
     {
         Schema::create('routers', function (Blueprint $table) {
             $table->id();
+            $table->string("sapid", 18);
+            $table->string("hostname", 14);
+            $table->ipAddress("loopback");
+            $table->string("macaddress", 17);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('restrouter/showbysapid/{sapid}', 'RouterRestController@showBySapid');
+Route::get('restrouter/showbyiprange/{ipstart}/{ipend}', 'RouterRestController@showByIpRange');
+Route::delete('restrouter/deletebyip/{ip}', 'RouterRestController@deleteByIp');
+Route::resource('restrouter', 'RouterRestController');
